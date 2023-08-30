@@ -14,6 +14,8 @@ public class EnemyController : MonoBehaviour
 
     public float damage;
 
+    public float health = 5f;
+
     void Start( )
     {
         target = PlayerHealthController.instance.transform;
@@ -37,6 +39,16 @@ public class EnemyController : MonoBehaviour
             PlayerHealthController.instance.TakeDamage( damage );
 
             hitCounter = hitWaitTime;
+        }
+    }
+
+    public void TakeDamage( float damageToTake)
+    {
+        health -= damageToTake;
+
+        if ( health <= 0 )
+        {
+            Destroy( gameObject );
         }
     }
 }
