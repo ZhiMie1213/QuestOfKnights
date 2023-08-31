@@ -20,6 +20,8 @@ public class EnemyController : MonoBehaviour
     public float knockBackTime = .5f;
     private float knockBackCounter;
 
+    public int expToGive = 1;
+
     void Start( )
     {
         target = PlayerHealthController.instance.transform;
@@ -62,14 +64,15 @@ public class EnemyController : MonoBehaviour
         }
     }
     
-    //敵のHPが０になったら消える
+    //敵のHPが０になったら消えて、現在の位置に経験玉を生成する
     public void TakeDamage( float damageToTake)
     {
         health -= damageToTake;
-        
         if ( health <= 0 )
         {
             Destroy( gameObject );
+            
+            ExperienceLevelController.instance.SpawnExp( transform.position, expToGive );
         }
     }
 

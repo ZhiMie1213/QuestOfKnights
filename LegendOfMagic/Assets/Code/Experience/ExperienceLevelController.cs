@@ -5,28 +5,33 @@ using UnityEngine;
 public class ExperienceLevelController : MonoBehaviour
 {
     public static ExperienceLevelController instance;
-
-    public int currentExperience;
-
     private void Awake( )
     {
         instance = this;
     }
+    
+    public int currentExperience;
 
-    // Start is called before the first frame update
+    public ExpPickup pickup;
+
     void Start ( )
     {
         
     }
 
-    // Update is called once per frame
     void Update(  )
     {
         
     }
 
+    //プレイヤーがもらった経験玉の数を表示する
     public void GetExp( int amountToGet )
     {
         currentExperience += amountToGet;
+    }
+
+    public void SpawnExp( Vector3 position, int exValue )
+    {
+        Instantiate( pickup, position, Quaternion.identity ).expValue = exValue;
     }
 }

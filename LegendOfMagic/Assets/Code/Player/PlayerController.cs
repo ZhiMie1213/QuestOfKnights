@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 0.01f;
+    public float moveSpeed;
+
+    public float pickUpRange = 1.5f;
     
     void Start( )
     {
