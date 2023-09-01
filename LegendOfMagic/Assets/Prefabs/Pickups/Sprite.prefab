@@ -162,5 +162,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expValue: 1
-  moveSpeed: 0.8
+  moveSpeed: 1
   timeBerweenChecks: 0.2

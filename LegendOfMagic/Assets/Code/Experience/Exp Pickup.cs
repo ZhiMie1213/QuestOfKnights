@@ -16,7 +16,7 @@ public class ExpPickup : MonoBehaviour
 
     void Start( )
     {
-        player = PlayerHealthController.instance.GetComponent<PlayerController>();
+        player = PlayerHealthController.instance.GetComponent<PlayerController>( );
     }
 
     void Update( )
@@ -24,8 +24,8 @@ public class ExpPickup : MonoBehaviour
         //プレイヤーが経験玉の採取範囲に着いたら吸収のように受け取る
         if ( movingToPlayer == true )
         {
-            transform.position = Vector3.MoveTowards( transform.position, PlayerHealthController.instance.transform.position, 
-                moveSpeed * Time.deltaTime );
+            transform.position = Vector3.MoveTowards( transform.position, 
+                PlayerHealthController.instance.transform.position, moveSpeed * Time.deltaTime );
         }
         else
         {
