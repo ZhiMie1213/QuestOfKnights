@@ -20,7 +20,8 @@ public class EnemyDamager : MonoBehaviour
     void Update( )
     {
         //武器が少しつづ大きくなって出現する
-        transform.localScale = Vector3.MoveTowards( transform.localScale, targeSize, growSpeed * Time.deltaTime );
+        transform.localScale = Vector3.MoveTowards( transform.localScale, targeSize, 
+            growSpeed * Time.deltaTime );
 
         lifeTime -= Time.deltaTime;
         //武器の出現時間が終わったらどんどん小さくなって消えていく
@@ -35,7 +36,8 @@ public class EnemyDamager : MonoBehaviour
         }
     }
 
-	private void OnTriggerEnter2D( Collider2D collision )
+    //敵にダメージを与える
+    private void OnTriggerEnter2D( Collider2D collision )
 	{ 
 		if ( collision.tag == "Enemy" )
         {

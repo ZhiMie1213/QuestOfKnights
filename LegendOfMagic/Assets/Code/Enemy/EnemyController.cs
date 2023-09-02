@@ -54,6 +54,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    //プレイヤーにダメージを与える
     private void OnCollisionEnter2D( Collision2D collision )
     {
         if ( collision.gameObject.tag == "Player" && hitCounter <= 0f )
