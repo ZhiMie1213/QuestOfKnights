@@ -20,12 +20,12 @@ public class SpinWeapons : Weapon
 
     void Update( )
     {
-        //武器がプレイヤーの周りに360度で回す（武器の回転速度）
+        //設定した値で武器をプレイヤーの周りに回す（武器の回転速度）
         holder.rotation = Quaternion.Euler( 0f, 0f, 
             holder.rotation.eulerAngles.z - ( rotateSpeed * Time.deltaTime * stats[ weaponLevel ].speed ) );
 
         spawnCounter -= Time.deltaTime;
-        //前の武器の出現時間が終わったら新しいの武器が生成する
+        //設定した再生の時間になったら新しいの武器が生成する
         if ( spawnCounter <= 0 )
         {
             spawnCounter = timeBetweenSpawn;

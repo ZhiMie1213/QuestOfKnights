@@ -25,11 +25,7 @@ public class PlayerHealthController : MonoBehaviour
 
     void Update( )
     {
-        //Debug用コード(Tキー１回を押すとプレイヤーのHPが50点減らす)
-        /*if (Input.GetKeyDown( KeyCode.T ) )
-        {
-            TakeDamage( 50f );
-        }*/
+        
     }
 
     public void TakeDamage( float damageToTake )
