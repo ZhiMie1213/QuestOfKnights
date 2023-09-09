@@ -115,7 +115,7 @@ MonoBehaviour:
   damage: 5
   health: 5
   knockBackTime: 0.5
-  expToGive: 10
+  expToGive: 1
 --- !u!1 &1833867450392370997
 GameObject:
   m_ObjectHideFlags: 0
