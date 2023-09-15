@@ -8,13 +8,9 @@ public class TitleMenu : MonoBehaviour
     
     void Update()
     {
-        if ( Input.anyKey )
+        if ( Input.GetKey( KeyCode.Space ) )
         {
-            if ( !oneshotSfx )
-            {
-                Invoke( "LoadScene", 0.2f );
-                oneshotSfx = true;
-            }
+            Invoke( "LoadScene", 0.2f );
         }
     }
 

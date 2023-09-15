@@ -15,7 +15,13 @@ public class EnemySpawner : MonoBehaviour
 
     public int checkPerFrame;
     private int enemyToCheck;
-    
+
+    public List<WaveInfo> waves;
+
+    private int currentWave;
+
+    private float waveCounter;
+
     void Start( )
     {
         spawnCounter = timeToSpawn;
@@ -106,4 +112,13 @@ public class EnemySpawner : MonoBehaviour
 
         return spawnPoint;
     }
+}
+
+[System.Serializable]
+public class WaveInfo
+{
+    public GameObject enemyToSpawn;
+    public float waveLemght = 10f;
+    public float timeBetweenSpawns = 1f;
+    
 }

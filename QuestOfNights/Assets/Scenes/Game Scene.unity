@@ -468,6 +468,7 @@ MonoBehaviour:
   explvlSlider: {fileID: 2028765319}
   expLvlText: {fileID: 1299267690}
   timeText: {fileID: 1547071876}
+  titleMenuName: Title Menu
 --- !u!1 &227384843
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,6 +534,19 @@ MonoBehaviour:
   maxSapwn: {fileID: 1738955248}
   minSapwn: {fileID: 1053953346}
   checkPerFrame: 10
+  waves:
+  - enemyToSpawn: {fileID: 1833867450072195028, guid: 53b18c7665ad041b7838546055318e5e, type: 3}
+    waveLemght: 10
+    timeBetweenSpawns: 0.5
+  - enemyToSpawn: {fileID: 4579229239575199305, guid: 15ba3f841b22b403daca76ea6a411926, type: 3}
+    waveLemght: 10
+    timeBetweenSpawns: 0.5
+  - enemyToSpawn: {fileID: 6650629624535874261, guid: dd9caaf826cff4cc0bee4a27cabe13d5, type: 3}
+    waveLemght: 10
+    timeBetweenSpawns: 0.5
+  - enemyToSpawn: {fileID: 3122751187916710793, guid: 888a4681f0f7e4928b710b69e7982f1b, type: 3}
+    waveLemght: 10
+    timeBetweenSpawns: 0.25
 --- !u!4 &266583021
 Transform:
   m_ObjectHideFlags: 0
@@ -76003,7 +76017,7 @@ MonoBehaviour:
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
+  m_DynamicPixelsPerUnit: 100
   m_PresetInfoIsWorld: 1
 --- !u!223 &690522201
 Canvas:
@@ -76398,7 +76412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 100
+  maxHealth: 1
   healthSlider: {fileID: 658844541}
 --- !u!114 &1105109255
 MonoBehaviour:

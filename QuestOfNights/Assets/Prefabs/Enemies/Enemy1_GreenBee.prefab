@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 8749764667044985874}
   - component: {fileID: 8567759386039727691}
   - component: {fileID: 4621750899848618678}
+  - component: {fileID: -5126214348882133930}
   m_Layer: 0
-  m_Name: Enemy_GreenBee
+  m_Name: Enemy1_GreenBee
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,6 +117,22 @@ MonoBehaviour:
   health: 5
   knockBackTime: 0.5
   expToGive: 1
+--- !u!114 &-5126214348882133930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833867450072195028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90c509f3996ac4182b044ffd345b0a8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 1833867450072195029}
+  speed: 0.5
+  minSize: 0.9
+  maxSize: 1.1
 --- !u!1 &1833867450392370997
 GameObject:
   m_ObjectHideFlags: 0

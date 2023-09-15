@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
@@ -15,6 +16,8 @@ public class UIController : MonoBehaviour
     public Slider explvlSlider;
     public TMP_Text expLvlText;
     public TMP_Text timeText;
+
+    public string titleMenuName;
     
     void Start ( )
     {
@@ -40,5 +43,10 @@ public class UIController : MonoBehaviour
         float seconds = Mathf.FloorToInt( time % 60 );
 
         timeText.text = minutes + ":" + seconds.ToString( "00" );
+    }
+
+    public void GoToTitleMenu ( )
+    {
+        SceneManager.LoadScene( titleMenuName );
     }
 }
