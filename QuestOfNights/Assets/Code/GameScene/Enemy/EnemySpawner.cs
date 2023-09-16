@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -24,24 +25,39 @@ public class EnemySpawner : MonoBehaviour
 
     void Start( )
     {
-        spawnCounter = timeToSpawn;
         target = PlayerHealthController.instance.transform;
         //敵の生成が重ならないように
         despawnDistance = Vector3.Distance( transform.position, maxSapwn.position ) + 4f;
+
+        currentWave -= 1;
+        GoToNextWave( );
     }
 
     void Update( )
     {
-        spawnCounter -= Time.deltaTime;
-        if ( spawnCounter <= 0 )
+        //敵が順番によって生成する
+        if ( PlayerHealthController.instance.gameObject.activeSelf )
         {
-            spawnCounter = timeToSpawn;
-            
-            //敵のObjectをチェックする
-            GameObject newEnemy = Instantiate( enemyToSpawn, selectSpawnPoint( ), transform.rotation );
-            spawnedEnemies.Add( newEnemy );
-        }
+            if ( currentWave < waves.Count )
+            {
+                waveCounter -= Time.deltaTime;
+                if ( waveCounter <= 0 )
+                {
+                    GoToNextWave( );
+                }
 
+                spawnCounter -= Time.deltaTime;
+                if ( spawnCounter <= 0 )
+                {
+                    spawnCounter = waves[ currentWave ].timeBetweenSpawns;
+
+                    GameObject newEnemy = Instantiate( waves[ currentWave ]. enemyToSpawn, selectSpawnPoint(), 
+                        Quaternion.identity  );
+                    spawnedEnemies.Add( newEnemy );
+                }
+            }
+        }
+        
         transform.position = target.position;
 
         int checkTraget = enemyToCheck + checkPerFrame;
@@ -111,6 +127,18 @@ public class EnemySpawner : MonoBehaviour
         }
 
         return spawnPoint;
+    }
+
+    public void GoToNextWave ( )
+    {
+        currentWave++;
+
+        if ( currentWave >= waves.Count )
+        {
+            currentWave = waves.Count - 1;
+        }
+        waveCounter = waves[ currentWave ].waveLemght;
+        spawnCounter = waves[ currentWave ].timeBetweenSpawns;
     }
 }
 
