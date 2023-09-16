@@ -8,7 +8,7 @@ public class TitleMenu : MonoBehaviour
     
     void Update()
     {
-        if ( Input.GetKey( KeyCode.Space ) )
+        if ( Input.anyKey )
         {
             Invoke( "LoadScene", 0.2f );
         }
