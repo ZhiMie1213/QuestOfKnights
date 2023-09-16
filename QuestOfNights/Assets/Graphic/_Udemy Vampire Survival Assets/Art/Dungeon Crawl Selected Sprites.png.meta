@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -63,6 +64,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -75,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -87,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -99,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -111,6 +116,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -123,6 +129,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -135,6 +142,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -697,35 +705,34 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Vampire Survival Sprites_Padded_16: -2011955584
-      Vampire Survival Sprites_Padded_4: -196789849
-      Vampire Survival Sprites_Padded_7: -1283994490
-      Vampire Survival Sprites_Padded_8: 1495497679
-      Vampire Survival Sprites_Padded_22: -386498487
-      Vampire Survival Sprites_Padded_2: -676391142
-      Vampire Survival Sprites_Padded_5: 906671935
-      Vampire Survival Sprites_Padded_9: -2101580186
-      Vampire Survival Sprites_Padded_19: -980759796
-      Vampire Survival Sprites_Padded_20: -112153730
-      Vampire Survival Sprites_Padded_23: -715782552
-      Vampire Survival Sprites_Padded_24: -693617150
-      Vampire Survival Sprites_Padded_17: -1219029316
       Vampire Survival Sprites_Padded_0: 348683426
-      Vampire Survival Sprites_Padded_15: 1336138882
-      Vampire Survival Sprites_Padded_13: -237660802
       Vampire Survival Sprites_Padded_1: 266326301
       Vampire Survival Sprites_Padded_10: 1541938654
-      Vampire Survival Sprites_Padded_3: -1714587360
-      Vampire Survival Sprites_Padded_12: 1904225746
-      Vampire Survival Sprites_Padded_25: 1860219927
-      Vampire Survival Sprites_Padded_14: -1633049766
-      Vampire Survival Sprites_Padded_21: -1197615466
-      Vampire Survival Sprites_Padded_6: -1061488230
       Vampire Survival Sprites_Padded_11: -704770020
+      Vampire Survival Sprites_Padded_12: 1904225746
+      Vampire Survival Sprites_Padded_13: -237660802
+      Vampire Survival Sprites_Padded_14: -1633049766
+      Vampire Survival Sprites_Padded_15: 1336138882
+      Vampire Survival Sprites_Padded_16: -2011955584
+      Vampire Survival Sprites_Padded_17: -1219029316
       Vampire Survival Sprites_Padded_18: -806250268
-  spritePackingTag: 
+      Vampire Survival Sprites_Padded_19: -980759796
+      Vampire Survival Sprites_Padded_2: -676391142
+      Vampire Survival Sprites_Padded_20: -112153730
+      Vampire Survival Sprites_Padded_21: -1197615466
+      Vampire Survival Sprites_Padded_22: -386498487
+      Vampire Survival Sprites_Padded_23: -715782552
+      Vampire Survival Sprites_Padded_24: -693617150
+      Vampire Survival Sprites_Padded_25: 1860219927
+      Vampire Survival Sprites_Padded_3: -1714587360
+      Vampire Survival Sprites_Padded_4: -196789849
+      Vampire Survival Sprites_Padded_5: 906671935
+      Vampire Survival Sprites_Padded_6: -1061488230
+      Vampire Survival Sprites_Padded_7: -1283994490
+      Vampire Survival Sprites_Padded_8: 1495497679
+      Vampire Survival Sprites_Padded_9: -2101580186
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
