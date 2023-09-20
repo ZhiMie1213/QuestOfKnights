@@ -30,7 +30,8 @@ public class SpinWeapons : Weapon
         {
             spawnCounter = timeBetweenSpawn;
 
-            Instantiate( daggerToSpawn, daggerToSpawn.position, daggerToSpawn.rotation, holder ).gameObject.SetActive( true );
+            Instantiate( daggerToSpawn, daggerToSpawn.position, daggerToSpawn.rotation, holder )
+                .gameObject.SetActive( true );
         }
     }
 
