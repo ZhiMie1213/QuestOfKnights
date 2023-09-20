@@ -14,6 +14,7 @@ public class TitleMenu : MonoBehaviour
         }
     }
 
+    [System.Obsolete]
     void LoadScene ( )
     {
         Application.LoadLevel("Game Scene");

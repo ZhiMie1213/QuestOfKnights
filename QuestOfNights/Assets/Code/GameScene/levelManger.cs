@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class levelManger : MonoBehaviour
 {
     public static levelManger instance;
@@ -10,7 +11,7 @@ public class levelManger : MonoBehaviour
         instance = this;
     }
 
-    public bool gameActive;
+    private bool gameActive;
     public float timer;
     
     void Start( )
@@ -25,5 +26,12 @@ public class levelManger : MonoBehaviour
             timer += Time.deltaTime;
             UIController.instance.UpdateTimer( timer );
         }
+    }
+
+    public void EndLevel ( )
+    {
+        gameActive = false;
+
+        //UIController.instance.levelEndScreen.SetActive( true );
     }
 }

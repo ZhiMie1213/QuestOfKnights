@@ -16,6 +16,7 @@ public class UIController : MonoBehaviour
     public Slider explvlSlider;
     public TMP_Text expLvlText;
     public TMP_Text timeText;
+    public GameObject levelEndScreen;
 
     public string titleMenuName;
     
