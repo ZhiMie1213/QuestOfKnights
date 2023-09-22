@@ -603,7 +603,7 @@ MonoBehaviour:
   explvlSlider: {fileID: 2028765319}
   expLvlText: {fileID: 1299267690}
   timeText: {fileID: 1547071876}
-  levelEndScreen: {fileID: 0}
+  levelEndScreen: {fileID: 984879220}
   titleMenuName: Title Menu
 --- !u!1 &227384843
 GameObject:
@@ -672,7 +672,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -235.34454, y: -185.18246}
+  m_AnchoredPosition: {x: -227, y: -113.43}
   m_SizeDelta: {x: 320.4091, y: 71.7541}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &255929541
@@ -806,16 +806,16 @@ MonoBehaviour:
   waves:
   - enemyToSpawn: {fileID: 1833867450072195028, guid: 53b18c7665ad041b7838546055318e5e, type: 3}
     waveLemght: 60
-    timeBetweenSpawns: 2
+    timeBetweenSpawns: 1.5
   - enemyToSpawn: {fileID: 4579229239575199305, guid: 15ba3f841b22b403daca76ea6a411926, type: 3}
     waveLemght: 60
-    timeBetweenSpawns: 2
+    timeBetweenSpawns: 1
   - enemyToSpawn: {fileID: 6650629624535874261, guid: dd9caaf826cff4cc0bee4a27cabe13d5, type: 3}
     waveLemght: 60
-    timeBetweenSpawns: 2
+    timeBetweenSpawns: 0.8
   - enemyToSpawn: {fileID: 3122751187916710793, guid: 888a4681f0f7e4928b710b69e7982f1b, type: 3}
     waveLemght: 60
-    timeBetweenSpawns: 2
+    timeBetweenSpawns: 0.5
 --- !u!4 &266583021
 Transform:
   m_ObjectHideFlags: 0
@@ -76458,7 +76458,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 226, y: -185.18246}
+  m_AnchoredPosition: {x: 215, y: -113.43004}
   m_SizeDelta: {x: 320.4091, y: 71.7541}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &905805689
@@ -76688,7 +76688,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &984879221
 RectTransform:
   m_ObjectHideFlags: 0
@@ -77633,7 +77633,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 9, y: -98}
+  m_AnchoredPosition: {x: 8.9979, y: -124}
   m_SizeDelta: {x: 771.0449, y: 153.5396}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1684852043

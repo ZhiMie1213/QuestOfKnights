@@ -32,6 +32,8 @@ public class levelManger : MonoBehaviour
     {
         gameActive = false;
 
-        //UIController.instance.levelEndScreen.SetActive( true );
+        UIController.instance.levelEndScreen.SetActive( true );
     }
+
+    
 }
