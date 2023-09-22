@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
@@ -18,7 +18,7 @@ public class UIController : MonoBehaviour
     public TMP_Text timeText;
     public GameObject levelEndScreen;
 
-    public string titleMenuName;
+    public string mainMenuName;
     
     void Start ( )
     {
@@ -46,8 +46,13 @@ public class UIController : MonoBehaviour
         timeText.text = minutes + ":" + seconds.ToString( "00" );
     }
 
-    public void GoToTitleMenu ( )
+    public void GoToMainMenu ( )
     {
-        SceneManager.LoadScene( titleMenuName );
+        SceneManager.LoadScene( mainMenuName );
+    }
+
+    public void Restart ( )
+    {
+        SceneManager.LoadScene( SceneManager.GetActiveScene( ).name );
     }
 }
