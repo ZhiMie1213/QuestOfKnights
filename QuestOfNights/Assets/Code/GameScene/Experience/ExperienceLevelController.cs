@@ -60,6 +60,8 @@ public class ExperienceLevelController : MonoBehaviour
             currentLevel = expLevels.Count - 1;
         }
         
-        PlayerController.instance.activeWeapon.LevelUp( );
+        UIController.instance.levelUpPanel.SetActive( true );
+        Time.timeScale = 0f;
+        UIController.instance.levelUpButtons[ 1 ].UpdateButtonDisplay( PlayerController.instance.activeWeapon );
     }
 }

@@ -15,8 +15,13 @@ public class UIController : MonoBehaviour
 
     public Slider explvlSlider;
     public TMP_Text expLvlText;
+    
     public TMP_Text timeText;
+    
     public GameObject levelEndScreen;
+    
+    public LevelUpSelectionButton[] levelUpButtons;
+    public GameObject levelUpPanel;
 
     public string mainMenuName;
     
