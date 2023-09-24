@@ -23,7 +23,7 @@ public class Text : MonoBehaviour
         }
         else
         {
-            UIText.text = "Press any key to Play";
+            UIText.text = "Press any key to play";
         }
     }
 }
