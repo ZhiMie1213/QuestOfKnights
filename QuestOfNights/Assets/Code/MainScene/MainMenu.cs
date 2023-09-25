@@ -7,11 +7,11 @@ public class MainMenu : MonoBehaviour
     public AudioClip sfxButton;
     private bool oneshotSfx;
     
-    void Update()
+    void Update( )
     {
         if ( Input.anyKey )
         {
-            if (!oneshotSfx)
+            if ( !oneshotSfx )
             {
                 AudioSource.PlayClipAtPoint( sfxButton, Vector3.zero );
                 Invoke("LoadScene", 0.3f);
