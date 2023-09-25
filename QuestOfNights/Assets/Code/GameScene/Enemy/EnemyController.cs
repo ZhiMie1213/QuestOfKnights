@@ -74,6 +74,12 @@ public class EnemyController : MonoBehaviour
             Destroy( gameObject );
             
             ExperienceLevelController.instance.SpawnExp( transform.position, expToGive );
+            
+            SFXManager.instance.PlayerSFXPitched( 0 );
+        }
+        else
+        {
+            SFXManager.instance.PlayerSFXPitched( 1 );
         }
     }
 

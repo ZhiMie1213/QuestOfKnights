@@ -42,6 +42,8 @@ public class ExperienceLevelController : MonoBehaviour
         }
         UIController.instance.UpdateExperience( currentExperience, expLevels[ currentLevel ], 
             currentLevel );
+        
+        SFXManager.instance.PlayerSFXPitched( 2 );
     }
 
     public void SpawnExp( Vector3 position, int exValue )

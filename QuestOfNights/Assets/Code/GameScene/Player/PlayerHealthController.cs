@@ -43,6 +43,8 @@ public class PlayerHealthController : MonoBehaviour
             levelManger.instance.EndLevel( );
             //死んだ時の表現
             Instantiate( deathEffect, transform.position, transform.rotation );
+            
+            SFXManager.instance.PlaySFX( 3 );
         }
 
         healthSlider.value = currentHealth;

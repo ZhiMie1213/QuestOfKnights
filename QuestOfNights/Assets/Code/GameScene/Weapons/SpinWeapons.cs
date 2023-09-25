@@ -32,6 +32,8 @@ public class SpinWeapons : Weapon
 
             Instantiate( daggerToSpawn, daggerToSpawn.position, daggerToSpawn.rotation, holder )
                 .gameObject.SetActive( true );
+            
+            SFXManager.instance.PlaySFX( 4 );
         }
     }
 
