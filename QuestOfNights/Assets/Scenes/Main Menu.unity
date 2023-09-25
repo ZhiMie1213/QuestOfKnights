@@ -781,6 +781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8abdd647aa1674abe9a41dbd4383842f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxButton: {fileID: 8300000, guid: 624f74fc706d74cdbbea2380436a4f34, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

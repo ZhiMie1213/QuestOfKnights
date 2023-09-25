@@ -65,5 +65,7 @@ public class ExperienceLevelController : MonoBehaviour
         UIController.instance.levelUpPanel.SetActive( true );
         Time.timeScale = 0f;
         UIController.instance.levelUpButtons[ 1 ].UpdateButtonDisplay( PlayerController.instance.activeWeapon );
+        
+        SFXManager.instance.PlayerSFXPitched( 5 );
     }
 }

@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
+    public AudioClip sfxButton;
     private bool oneshotSfx;
     
     void Update()
     {
         if ( Input.anyKey )
         {
-            Invoke( "LoadScene", 0.2f );
+            if (!oneshotSfx)
+            {
+                AudioSource.PlayClipAtPoint( sfxButton, Vector3.zero );
+                Invoke("LoadScene", 0.2f);
+                oneshotSfx = true;
+            }
         }
     }
 
