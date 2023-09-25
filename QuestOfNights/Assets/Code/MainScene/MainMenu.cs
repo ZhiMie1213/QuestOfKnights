@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
             if (!oneshotSfx)
             {
                 AudioSource.PlayClipAtPoint( sfxButton, Vector3.zero );
-                Invoke("LoadScene", 0.2f);
+                Invoke("LoadScene", 0.3f);
                 oneshotSfx = true;
             }
         }
