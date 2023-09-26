@@ -81,6 +81,8 @@ public class EnemyController : MonoBehaviour
         {
             SFXManager.instance.PlayerSFXPitched( 1 );
         }
+        
+        DamageNumberController.instance.SpawnDamage( damageToTake, transform.position );
     }
 
     public void TakeDamage( float damageToTake, bool shouldKnockBack )
