@@ -198,9 +198,9 @@ MonoBehaviour:
   moveSpeed: 1
   hitWaitTime: 1
   damage: 8
-  health: 5
+  health: 15
   knockBackTime: 0.5
-  expToGive: 1
+  expToGive: 5
 --- !u!114 &1808296585854969456
 MonoBehaviour:
   m_ObjectHideFlags: 0
