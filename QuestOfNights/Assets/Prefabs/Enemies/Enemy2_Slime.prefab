@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theRB: {fileID: 6249207502702235125}
-  moveSpeed: 0.8
+  moveSpeed: 1
   hitWaitTime: 1
   damage: 7
   health: 10
