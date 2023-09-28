@@ -35,6 +35,13 @@ public class SpinWeapons : Weapon
             
             SFXManager.instance.PlaySFX( 4 );
         }
+
+        if ( statsUpdated == true )
+        {
+            statsUpdated = false;
+            
+            SetStats( );
+        }
     }
 
     //武器の数値
@@ -48,7 +55,5 @@ public class SpinWeapons : Weapon
         timeBetweenSpawn = stats[ weaponLevel ].timeBetweenAttacks;
         //持たせる時間
         damager.lifeTime = stats[ weaponLevel ].duration;
-        
-        spawnCounter = 0f;
     }
 }

@@ -16,6 +16,8 @@ public class Weapon : MonoBehaviour
         if ( weaponLevel < stats.Count - 1 )
         {
             weaponLevel++;
+
+            statsUpdated = true;
         }
     }
 }
