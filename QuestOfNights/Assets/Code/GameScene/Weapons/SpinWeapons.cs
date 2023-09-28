@@ -26,7 +26,7 @@ public class SpinWeapons : Weapon
 
         spawnCounter -= Time.deltaTime;
         //設定した再生の時間になったら新しいの武器が生成する
-        if ( spawnCounter <= 0 )
+        if ( spawnCounter <= 0f )
         {
             spawnCounter = timeBetweenSpawn;
 

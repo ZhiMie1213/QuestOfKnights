@@ -200,7 +200,7 @@ MonoBehaviour:
   damage: 10
   health: 20
   knockBackTime: 0.5
-  expToGive: 7
+  expToGive: 5
 --- !u!114 &8969355406610075597
 MonoBehaviour:
   m_ObjectHideFlags: 0
