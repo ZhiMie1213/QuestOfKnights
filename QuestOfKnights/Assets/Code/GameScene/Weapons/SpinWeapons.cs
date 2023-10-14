@@ -12,6 +12,8 @@ public class SpinWeapons : Weapon
     private float spawnCounter;
     
     public EnemyDamager damager;
+
+    public GameObject sword;
     
     void Start( )
     {
@@ -46,6 +48,11 @@ public class SpinWeapons : Weapon
             statsUpdated = false;
             
             SetStats( );
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            
         }
     }
 
