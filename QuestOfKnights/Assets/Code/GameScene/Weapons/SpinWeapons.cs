@@ -50,10 +50,10 @@ public class SpinWeapons : Weapon
             SetStats( );
         }
 
-        if (Input.GetKey(KeyCode.Space))
+        /*if (Input.GetKey(KeyCode.Space))
         {
             
-        }
+        }*/
     }
 
     //武器の数値
