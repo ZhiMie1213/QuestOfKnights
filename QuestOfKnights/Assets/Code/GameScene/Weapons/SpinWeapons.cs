@@ -47,8 +47,6 @@ public class SpinWeapons : Weapon
             
             SetStats( );
         }
-
-        test();
     }
 
     //武器の数値
@@ -62,26 +60,5 @@ public class SpinWeapons : Weapon
         timeBetweenSpawn = stats[ weaponLevel ].timeBetweenAttacks;
         //持たせる時間
         damager.lifeTime = stats[ weaponLevel ].duration;
-    }
-
-    [SerializeField] GameObject Sword;
-    public void test ()
-    {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            if (this.gameObject == true)
-            {
-                this.gameObject.SetActive(false);
-
-                return;
-            }
-
-            if (this.gameObject == false)
-            {
-                Sword.SetActive(true);
-
-                return;
-            }
-        }
     }
 }
