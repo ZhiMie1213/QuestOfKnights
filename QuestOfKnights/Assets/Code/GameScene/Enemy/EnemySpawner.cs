@@ -148,5 +148,4 @@ public class WaveInfo
     public GameObject enemyToSpawn;
     public float waveLemght = 10f;
     public float timeBetweenSpawns = 1f;
-    
 }
