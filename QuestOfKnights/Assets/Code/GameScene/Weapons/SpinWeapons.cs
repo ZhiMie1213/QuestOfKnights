@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpinWeapons : Weapon
@@ -12,6 +13,8 @@ public class SpinWeapons : Weapon
     private float spawnCounter;
     
     public EnemyDamager damager;
+
+    public WeaponDisplay weaponDisplay;
 
     void Start( )
     {
@@ -35,9 +38,12 @@ public class SpinWeapons : Weapon
         {
             spawnCounter = timeBetweenSpawn;
 
-            Instantiate( daggerToSpawn, daggerToSpawn.position, daggerToSpawn.rotation, holder )
-                .gameObject.SetActive( true );
-            
+            if (weaponDisplay.gameObject == true)
+            {
+                Instantiate(daggerToSpawn, daggerToSpawn.position, daggerToSpawn.rotation, holder)
+                    .gameObject.SetActive(true);
+            }
+
             SFXManager.instance.PlaySFX( 4 );
         }
 
