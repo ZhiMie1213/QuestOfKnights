@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5071500813284618935}
   - component: {fileID: 3421449326648204250}
   - component: {fileID: 2958389429466789970}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Bat_Level3
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4244979675611905121}
   - component: {fileID: 3979027503854558760}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: "\u30E2\u30F3\u30B9\u30BF\u30FC_\u30B3\u30A6\u30E2\u30EA\u578B_\u30AA\u30AA\u30B3\u30A6\u30E2\u30EA"
   m_TagString: Enemy
   m_Icon: {fileID: 0}
