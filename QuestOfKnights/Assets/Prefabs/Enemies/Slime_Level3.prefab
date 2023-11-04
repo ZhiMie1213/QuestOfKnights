@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6739184711931866939}
   - component: {fileID: 7683193798797429636}
   - component: {fileID: 1369253456945048943}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Slime_Level3
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5038039210106387519}
   - component: {fileID: 8496040387706410166}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u30E2\u30F3\u30B9\u30BF\u30FC_\u30B9\u30E9\u30A4\u30E0\u578B_\u30B9\u30E9\u30A4\u30E0"
   m_TagString: Enemy
   m_Icon: {fileID: 0}

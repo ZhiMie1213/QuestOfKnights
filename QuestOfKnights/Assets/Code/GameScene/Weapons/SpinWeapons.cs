@@ -13,9 +13,7 @@ public class SpinWeapons : Weapon
     private float spawnCounter;
     
     public EnemyDamager damager;
-
-    public WeaponDisplay weaponDisplay;
-
+    
     void Start( )
     {
         SetStats( );

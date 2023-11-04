@@ -6,20 +6,23 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    [SerializeField, Header("無敵時間")] 
+    private float damageTime;
+    [SerializeField, Header("点滅時間")] 
+    private float flashTime;
+    
     public Rigidbody2D theRB;
-    public float moveSpeed;
     private Transform target;
+    private SpriteRenderer spriteRenderer;
+    public PlayerHealthController playerHealthController;
 
+    public float moveSpeed;
     public float hitWaitTime = 1f;
     private float hitCounter;
-
     public float damage;
-
     public float health = 5f;
-
     public float knockBackTime = .5f;
     private float knockBackCounter;
-
     public int expToGive = 1;
 
     void Start( )
@@ -62,7 +65,25 @@ public class EnemyController : MonoBehaviour
             PlayerHealthController.instance.TakeDamage( damage );
 
             hitCounter = hitWaitTime;
+            
+            playerHealthController.gameObject.layer = LayerMask.NameToLayer("PlayerDamager");
+            Damage();
         }
+    }
+    
+    public void Damage()
+    {
+        Color color = spriteRenderer.color;
+        for (int i = 0; i < damageTime; i++)
+        {
+            //yield return new WaitForSeconds(flashTime);
+            spriteRenderer.color = new Color( color.r, color.g, color.b, 0.0f );
+            
+            //yield return new WaitForSeconds(flashTime);
+            spriteRenderer.color = new Color( color.r, color.g, color.b, 1.0f );
+        }
+        spriteRenderer.color = color;
+        playerHealthController.gameObject.layer = LayerMask.NameToLayer("Default");
     }
     
     //敵のHPが０になったら消えて、現在の位置に経験玉を生成する
@@ -77,10 +98,10 @@ public class EnemyController : MonoBehaviour
             
             SFXManager.instance.PlayerSFXPitched( 0 );
         }
-        /*else
+        else
         {
-            SFXManager.instance.PlayerSFXPitched( 1 );
-        }*/
+            //SFXManager.instance.PlayerSFXPitched( 1 );
+        }
         
         DamageNumberController.instance.SpawnDamage( damageToTake, transform.position );
     }

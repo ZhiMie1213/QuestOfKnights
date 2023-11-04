@@ -13,9 +13,7 @@ public class PlayerHealthController : MonoBehaviour
     }
 
     public float currentHealth, maxHealth;
-
     public Slider healthSlider;
-
     public GameObject deathEffect;
 
     void Start( )
@@ -46,7 +44,6 @@ public class PlayerHealthController : MonoBehaviour
             
             SFXManager.instance.PlaySFX( 3 );
         }
-
         healthSlider.value = currentHealth;
     }
 }

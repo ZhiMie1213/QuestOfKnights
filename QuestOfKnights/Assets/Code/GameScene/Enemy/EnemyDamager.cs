@@ -7,21 +7,17 @@ using UnityEngine;
 
 public class EnemyDamager : MonoBehaviour
 {
+    private Vector3 targeSize;
+    private List<EnemyController> enemiesInRange = new List<EnemyController>( );
+    
     public float damageAmount;
-
     public float lifeTime;
     //public float growSpeed;
-    private Vector3 targeSize;
-
     public bool shouldKnocBack;
-
     public bool destroyParint;
-
     public bool damageOverTime;
     public bool timeBetweenDamage;
     private float damageCounter;
-
-    private List<EnemyController> enemiesInRange = new List<EnemyController>( );
 
     void Start( )
     {
@@ -71,7 +67,7 @@ public class EnemyDamager : MonoBehaviour
             }
         }
     }
-
+    
     private void OnTriggerExit2D( Collider2D collision )
     {
         if ( damageOverTime == true )
