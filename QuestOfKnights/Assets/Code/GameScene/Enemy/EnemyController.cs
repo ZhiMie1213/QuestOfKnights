@@ -6,11 +6,15 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    
-    
+    //無敵時間
+    [SerializeField] private float damageTime;
+    //点滅時間
+    [SerializeField] private float flashTime;
+
     public Rigidbody2D theRB;
     public float moveSpeed;
     private Transform target;
+    private SpriteRenderer spriteRenderer;
 
     public float hitWaitTime = 1f;
     private float hitCounter;
@@ -27,6 +31,7 @@ public class EnemyController : MonoBehaviour
     void Start( )
     {
         target = PlayerHealthController.instance.transform;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update( )
@@ -64,9 +69,28 @@ public class EnemyController : MonoBehaviour
             PlayerHealthController.instance.TakeDamage( damage );
 
             hitCounter = hitWaitTime;
+
+            gameObject.layer = LayerMask.NameToLayer("PlayerDamage");
+            StartCoroutine(Damage());
         }
     }
-    
+
+    IEnumerator Damage()
+    {
+        Color color = spriteRenderer.color;
+        for (int i = 0; i < damageTime; i++)
+        {
+            yield return new WaitForSeconds(flashTime);
+            spriteRenderer.color = new Color(color.r, color.g, color.b, 0.0f);
+            
+            yield return new WaitForSeconds(flashTime);
+            spriteRenderer.color = new Color(color.r, color.g, color.b, 1.0f);
+        }
+
+        spriteRenderer.color = color;
+        gameObject.layer = LayerMask.NameToLayer("Default");
+    }
+
     //敵のHPが０になったら消えて、現在の位置に経験玉を生成する
     public void TakeDamage( float damageToTake)
     {

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 45959041767169075}
   - component: {fileID: 7784247804088194501}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u30E2\u30F3\u30B9\u30BF\u30FC_\u30B3\u3099\u30D5\u3099\u30EA\u30F3\u578B_\u30B3\u3099\u30D5\u3099\u30EA\u30F3"
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 5534585520320167635}
   - component: {fileID: 7575786474317988225}
   - component: {fileID: 5006618695541582327}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Goblin_Level2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -194,6 +194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325f0023581da41b4bec3ab9159c8e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageTime: 0
+  flashTime: 0
   theRB: {fileID: 5770972155724570370}
   moveSpeed: 1.9
   hitWaitTime: 1
