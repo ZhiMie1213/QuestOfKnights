@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
+    public GameObject sword;
     void Update( )
     {
         if ( Input.GetKeyDown( KeyCode.Space ) )
         {
-            this.gameObject.SetActive( false );
+            sword.SetActive( false );
         }
     }
 }
