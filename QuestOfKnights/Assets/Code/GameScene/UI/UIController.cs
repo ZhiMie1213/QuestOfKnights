@@ -9,7 +9,7 @@ public class UIController : MonoBehaviour
 {
     public static UIController instance;
 
-    private void Awake()
+    private void Awake( )
     {
         instance = this;
     }
@@ -21,7 +21,7 @@ public class UIController : MonoBehaviour
 
     public GameObject levelEndScreen;
 
-    public LevelUpSelectionButton[] levelUpButtons;
+    public LevelUpSelectionButton[ ] levelUpButtons;
     public GameObject levelUpPanel;
 
     public string mainMenuName;

@@ -18,13 +18,15 @@ public class EnemyDamager : MonoBehaviour
     public bool destroyParint;
 
     public bool damageOverTime;
-    public bool timeBetweenDamage;
+    public float timeBetweenDamage;
     private float damageCounter;
 
     private List<EnemyController> enemiesInRange = new List<EnemyController>( );
 
     void Start( )
     {
+        Destroy( gameObject, lifeTime );
+
         //targeSize = transform.localScale;
         //transform.localScale = Vector3.zero;
     }
@@ -37,17 +39,39 @@ public class EnemyDamager : MonoBehaviour
 
         lifeTime -= Time.deltaTime;
         //武器の出現時間が終わったら消える
-        if ( lifeTime <= 0 )
+        //if (lifeTime <= 0)
+        //{
+        //    //targeSize = Vector3.zero;
+
+        //    if (transform.localScale.x == 0f)
+        //    {
+        //        Destroy(gameObject);
+
+        //        if (destroyParint)
+        //        {
+        //            Destroy(transform.parent.gameObject);
+        //        }
+        //    }
+        //}
+
+        if( damageOverTime == true )
         {
-            //targeSize = Vector3.zero;
+            damageCounter -= Time.deltaTime;
 
-            if ( transform.localScale.x == 0f )
+            if( damageCounter <= 0 )
             {
-                Destroy(gameObject);
+                damageCounter = timeBetweenDamage;
 
-                if ( destroyParint )
+                for ( int i = 0; i < enemiesInRange.Count; i++ )
                 {
-                    Destroy( transform.parent.gameObject );
+                    if ( enemiesInRange[ i ] != null )
+                    {
+                        enemiesInRange[ i ].TakeDamage( damageAmount, shouldKnocBack );
+                    } else
+                    {
+                        enemiesInRange.RemoveAt( i );
+                        i--;
+                    }   
                 }
             }
         }
@@ -58,9 +82,9 @@ public class EnemyDamager : MonoBehaviour
 	{
         if ( damageOverTime == false )
         {
-            if (collision.tag == "Enemy")
+            if ( collision.tag == "Enemy" )
             {
-                collision.GetComponent<EnemyController>().TakeDamage(damageAmount, shouldKnocBack);
+                collision.GetComponent<EnemyController>( ).TakeDamage( damageAmount, shouldKnocBack );
             }
         }
         else

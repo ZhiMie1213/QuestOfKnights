@@ -14,8 +14,6 @@ public class SpinWeapons : Weapon
     
     public EnemyDamager damager;
 
-    public WeaponDisplay weaponDisplay;
-
     void Start( )
     {
         SetStats( );
@@ -38,8 +36,8 @@ public class SpinWeapons : Weapon
         {
             spawnCounter = timeBetweenSpawn;
 
-            Instantiate(daggerToSpawn, daggerToSpawn.position, daggerToSpawn.rotation, holder)
-                .gameObject.SetActive(true);
+            Instantiate( daggerToSpawn, daggerToSpawn.position, daggerToSpawn.rotation, holder )
+                .gameObject.SetActive( true );
 
             SFXManager.instance.PlaySFX( 4 );
         }
@@ -56,7 +54,7 @@ public class SpinWeapons : Weapon
     public void SetStats( )
     {
         //攻撃力
-        damager.damageAmount = stats[weaponLevel].damage;
+        damager.damageAmount = stats[ weaponLevel ].damage;
         //大きさ
         transform.localScale = Vector3.one * stats[ weaponLevel ].range;
         //生成の間隔時間

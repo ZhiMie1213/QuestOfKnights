@@ -18,6 +18,8 @@ public class PlayerHealthController : MonoBehaviour
 
     public GameObject deathEffect;
 
+    public EnemyController enemyController;
+
     void Start( )
     {
         currentHealth = maxHealth;
@@ -29,6 +31,20 @@ public class PlayerHealthController : MonoBehaviour
     void Update( )
     {
         
+    }
+
+    //プレイヤーにダメージを与える
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player" && enemyController.hitCounter <= 0f)
+        {
+            PlayerHealthController.instance.TakeDamage(enemyController.damage);
+
+            enemyController.hitCounter = enemyController.hitWaitTime;
+
+            //gameObject.layer = LayerMask.NameToLayer("PlayerDamage");
+            //StartCoroutine(Damage());
+        }
     }
 
     public void TakeDamage( float damageToTake )

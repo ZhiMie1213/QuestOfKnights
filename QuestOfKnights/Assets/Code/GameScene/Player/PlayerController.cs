@@ -15,10 +15,12 @@ public class PlayerController : MonoBehaviour
     public float pickUpRange = 1.5f;
 
     public Weapon activeWeapon;
+
+    public List<Weapon> unassignedWeapons, assignedWeapons;
     
     void Start( )
     {
-        
+        AddWeapon( Random.Range( 0, unassignedWeapons.Count ) );
     }
 
     void Update( )
@@ -31,5 +33,16 @@ public class PlayerController : MonoBehaviour
 
         //プレイヤーの速度
         transform.position += moveInput * moveSpeed * Time.deltaTime;
+    }
+
+    public void AddWeapon ( int weaponNumber )
+    {
+        if ( weaponNumber < unassignedWeapons.Count )
+        {
+            assignedWeapons.Add( unassignedWeapons[ weaponNumber ] );
+
+            unassignedWeapons[ weaponNumber ].gameObject.SetActive( true );
+            unassignedWeapons.RemoveAt( weaponNumber );
+        }
     }
 }
