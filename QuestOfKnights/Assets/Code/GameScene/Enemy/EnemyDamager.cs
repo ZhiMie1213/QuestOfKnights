@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.XR;
+//using UnityEditor.XR;
 using UnityEngine;
 
 public class EnemyDamager : MonoBehaviour
@@ -10,7 +10,7 @@ public class EnemyDamager : MonoBehaviour
     public float damageAmount;
 
     public float lifeTime;
-    //public float growSpeed;
+    public float growSpeed;
     private Vector3 targeSize;
 
     public bool shouldKnocBack;
@@ -23,6 +23,8 @@ public class EnemyDamager : MonoBehaviour
 
     private List<EnemyController> enemiesInRange = new List<EnemyController>( );
 
+    public bool destoryOnImpact;
+
     void Start( )
     {
         Destroy( gameObject, lifeTime );
@@ -34,14 +36,14 @@ public class EnemyDamager : MonoBehaviour
     void Update( )
     {
         //武器が少しつづ大きくなって出現する
-        /*transform.localScale = Vector3.MoveTowards( transform.localScale, targeSize, 
-            growSpeed * Time.deltaTime );*/
+        //transform.localScale = Vector3.MoveTowards(transform.localScale, targeSize,
+        //    growSpeed * Time.deltaTime);
 
-        lifeTime -= Time.deltaTime;
+        //lifeTime -= Time.deltaTime;
         //武器の出現時間が終わったら消える
         //if (lifeTime <= 0)
         //{
-        //    //targeSize = Vector3.zero;
+        //    targeSize = Vector3.zero;
 
         //    if (transform.localScale.x == 0f)
         //    {
@@ -54,7 +56,7 @@ public class EnemyDamager : MonoBehaviour
         //    }
         //}
 
-        if( damageOverTime == true )
+        if ( damageOverTime == true )
         {
             damageCounter -= Time.deltaTime;
 
@@ -82,9 +84,14 @@ public class EnemyDamager : MonoBehaviour
 	{
         if ( damageOverTime == false )
         {
-            if ( collision.tag == "Enemy" )
+            if (collision.tag == "Enemy")
             {
-                collision.GetComponent<EnemyController>( ).TakeDamage( damageAmount, shouldKnocBack );
+                collision.GetComponent<EnemyController>().TakeDamage(damageAmount, shouldKnocBack);
+
+                if ( destoryOnImpact )
+                {
+                    Destroy( gameObject );
+                }
             }
         }
         else

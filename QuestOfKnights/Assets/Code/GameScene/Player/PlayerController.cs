@@ -17,10 +17,18 @@ public class PlayerController : MonoBehaviour
     public Weapon activeWeapon;
 
     public List<Weapon> unassignedWeapons, assignedWeapons;
+
+    public int maxWeapon = 3;
+
+    [ HideInInspector ]
+    public List <Weapon> fullyLevelledWeapons = new List<Weapon>( );
     
     void Start( )
     {
-        AddWeapon( Random.Range( 0, unassignedWeapons.Count ) );
+        if ( assignedWeapons.Count == 0 )
+        {
+            AddWeapon( Random.Range( 0, unassignedWeapons.Count ) );
+        }
     }
 
     void Update( )
@@ -44,5 +52,13 @@ public class PlayerController : MonoBehaviour
             unassignedWeapons[ weaponNumber ].gameObject.SetActive( true );
             unassignedWeapons.RemoveAt( weaponNumber );
         }
+    }
+
+    public void AddWeapon( Weapon weaponToAdd ) 
+    {
+        weaponToAdd.gameObject.SetActive( true );
+
+        assignedWeapons.Add( weaponToAdd );
+        unassignedWeapons.Remove( weaponToAdd );
     }
 }

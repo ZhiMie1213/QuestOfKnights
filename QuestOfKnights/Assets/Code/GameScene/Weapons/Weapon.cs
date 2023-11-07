@@ -21,6 +21,12 @@ public class Weapon : MonoBehaviour
             weaponLevel++;
 
             statsUpdated = true;
+
+            if( weaponLevel >= stats.Count - 1 )
+            {
+                PlayerController.instance.fullyLevelledWeapons.Add( this );
+                PlayerController.instance.assignedWeapons.Remove( this );
+            }
         }
     }
 }
@@ -29,6 +35,7 @@ public class Weapon : MonoBehaviour
 public class WeaponStats
 {
     public float speed, damage, range, timeBetweenAttacks, amount, duration;
-    public string upgradeText;
+    public string upgradeText, upgradeText1, upgradeText2, upgradeText3;
+
     public Sprite currentLevelImage;
 }

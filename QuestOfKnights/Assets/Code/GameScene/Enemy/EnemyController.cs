@@ -36,44 +36,50 @@ public class EnemyController : MonoBehaviour
 
     void Update( )
     {
-        //敵がプレイヤーの攻撃を受けると、敵は吹っ飛ぶ
-        if ( knockBackCounter > 0 )
-        {
-            knockBackCounter -= Time.deltaTime;
-
-            if ( moveSpeed > 0 )
+        if ( PlayerController.instance.gameObject.activeSelf == true ) {
+            //敵がプレイヤーの攻撃を受けると、敵は吹っ飛ぶ
+            if ( knockBackCounter > 0 )
             {
-                moveSpeed = -moveSpeed * 2f;
+                knockBackCounter -= Time.deltaTime;
+
+                if ( moveSpeed > 0 )
+                {
+                    moveSpeed = -moveSpeed * 2f;
+                }
+
+                if ( knockBackCounter <= 0 )
+                {
+                    moveSpeed = Math.Abs( moveSpeed * .5f );
+                }
             }
 
-            if ( knockBackCounter <= 0 )
+            // 敵が自動的にプレイヤーの方面に向かって行く
+            theRB.velocity = ( target.position - transform.position ).normalized * moveSpeed;
+
+            if ( hitCounter > 0f )
             {
-                moveSpeed = Math.Abs( moveSpeed * .5f );
+                hitCounter -= Time.deltaTime;
             }
         }
-        
-        // 敵が自動的にプレイヤーの方面に向かって行く
-        theRB.velocity = ( target.position - transform.position ).normalized * moveSpeed;
-        
-        if ( hitCounter > 0f )
+        else
         {
-            hitCounter -= Time.deltaTime;
+            theRB.velocity = Vector2.zero;
         }
     }
 
     //プレイヤーにダメージを与える
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Player" && hitCounter <= 0f)
-    //    {
-    //        PlayerHealthController.instance.TakeDamage(damage);
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player" && hitCounter <= 0f)
+        {
+            PlayerHealthController.instance.TakeDamage(damage);
 
-    //        hitCounter = hitWaitTime;
+            hitCounter = hitWaitTime;
 
-    //        gameObject.layer = LayerMask.NameToLayer("PlayerDamage");
-    //        StartCoroutine(Damage());
-    //    }
-    //}
+            //gameObject.layer = LayerMask.NameToLayer("PlayerDamage");
+            //StartCoroutine(Damage());
+        }
+    }
 
     //IEnumerator Damage()
     //{

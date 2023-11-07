@@ -90,4 +90,10 @@ public class UIController : MonoBehaviour
             }
         }
     }
+
+    public void SkipLevelUp( )
+    {
+        levelUpPanel.SetActive( false );
+        Time.timeScale = 1f;
+    }
 }
