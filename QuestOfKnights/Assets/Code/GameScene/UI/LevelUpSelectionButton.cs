@@ -15,17 +15,17 @@ public class LevelUpSelectionButton : MonoBehaviour
     {
         if ( theWeapon.gameObject.activeSelf == true ) { 
             upgradeDescText.text = theWeapon.stats[ theWeapon.weaponLevel ].upgradeText;
-            upgradeDescText1.text = theWeapon.stats[theWeapon.weaponLevel].upgradeText1;
-            upgradeDescText2.text = theWeapon.stats[theWeapon.weaponLevel].upgradeText2;
-            upgradeDescText3.text = theWeapon.stats[theWeapon.weaponLevel].upgradeText3;
+            upgradeDescText1.text = theWeapon.stats[ theWeapon.weaponLevel ].upgradeText1;
+            upgradeDescText2.text = theWeapon.stats[ theWeapon.weaponLevel ].upgradeText2;
+            upgradeDescText3.text = theWeapon.stats[ theWeapon.weaponLevel ].upgradeText3;
             
-            weaponIcon.sprite = theWeapon.icon;
+            weaponIcon.sprite = theWeapon.stats[ theWeapon.weaponIcon ].icon;
 
             nameLevelText.text = theWeapon.name + " + " + theWeapon.weaponLevel;
         }else
         {
             upgradeDescText.text = "New";
-            weaponIcon.sprite = theWeapon.icon;
+            weaponIcon.sprite = theWeapon.stats[ theWeapon.weaponIcon ].icon;
 
             nameLevelText.text = theWeapon.name;
         }

@@ -7,11 +7,11 @@ public class Weapon : MonoBehaviour
 {
     public List<WeaponStats> stats;
     public int weaponLevel;
+    public int weaponImage;
+    public int weaponIcon;
 
     [HideInInspector] public bool statsUpdated;
-    //•Ší‚ÌƒAƒCƒRƒ“
-    public Sprite icon;
-    //•ûŒü
+    //public Sprite icon;
     protected Vector2 forward;
 
     public void LevelUp( )
@@ -19,6 +19,7 @@ public class Weapon : MonoBehaviour
         if ( weaponLevel < stats.Count - 1 )
         {
             weaponLevel++;
+            weaponIcon++;
 
             statsUpdated = true;
 
@@ -36,6 +37,5 @@ public class WeaponStats
 {
     public float speed, damage, range, timeBetweenAttacks, amount, duration;
     public string upgradeText, upgradeText1, upgradeText2, upgradeText3;
-
-    public Sprite currentLevelImage;
+    public Sprite icon, image;
 }
