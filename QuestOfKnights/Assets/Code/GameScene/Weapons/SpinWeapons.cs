@@ -17,11 +17,6 @@ public class SpinWeapons : Weapon
     void Start( )
     {
         SetStats( );
-
-        //角度に変換する
-        //float angle = Mathf.Atan2(forward.x, forward.y) * Mathf.Rad2Deg;
-        //角度を代入
-        //transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     void Update( )

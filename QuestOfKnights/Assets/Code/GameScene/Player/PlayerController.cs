@@ -42,23 +42,22 @@ public class PlayerController : MonoBehaviour
 
         //プレイヤーの速度
         transform.position += moveInput * moveSpeed * Time.deltaTime;
-
-        if ( moveInput == Vector3.left )
+        //プレイヤーアニメーション
+        if ( Input.GetAxisRaw("Horizontal") < 0 || Input.GetAxisRaw("Vertical") > 0 )
         {
-            playerAnim.SetBool( "isMovingLeft", true );
+            playerAnim.SetBool("isMovingLeft", true);
         }
         else
         {
-            playerAnim.SetBool( "isMovingLeft", false );
+            playerAnim.SetBool("isMovingLeft", false);
         }
-
-        if ( moveInput == Vector3.right )
+        if ( Input.GetAxisRaw("Vertical") < 0 || Input.GetAxisRaw("Horizontal") > 0 )
         {
-            playerAnim.SetBool( "isMovingRight", true );
+            playerAnim.SetBool("isMovingRight", true);
         }
         else
         {
-            playerAnim.SetBool( "isMovingRight", false );
+            playerAnim.SetBool("isMovingRight", false);
         }
     }
 
