@@ -33,27 +33,27 @@ public class SwordWeapons : Weapon
             spawnCounter = timeBetweenSpawn;
             //向かっている方向によって斬撃の方向を変える
             //X座標
-            if (Input.GetAxisRaw("Horizontal") != 0)
+            if (Input.GetAxisRaw( "Horizontal" ) != 0 )
             {
-                if (Input.GetAxisRaw("Horizontal") > 0)
+                if (Input.GetAxisRaw( "Horizontal" ) > 0 )
                 {
                     damager.transform.rotation = Quaternion.identity;
                 }
                 else
                 {
-                    damager.transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+                    damager.transform.rotation = Quaternion.Euler( 0f, 0f, 180f );
                 }
             }
             //Y座標
-            if (Input.GetAxisRaw("Vertical") != 0)
+            if (Input.GetAxisRaw( "Vertical" ) != 0 )
             {
-                if (Input.GetAxisRaw("Vertical") > 0)
+                if (Input.GetAxisRaw( "Vertical" ) > 0 )
                 {
-                    damager.transform.rotation = Quaternion.Euler(0f, 0f, 90f);
+                    damager.transform.rotation = Quaternion.Euler( 0f, 0f, 90f );
                 }
-                if (Input.GetAxisRaw("Vertical") < 0)
+                if (Input.GetAxisRaw( "Vertical" ) < 0 )
                 {
-                    damager.transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+                    damager.transform.rotation = Quaternion.Euler( 0f, 0f, -90f );
                 }
 
             }

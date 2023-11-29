@@ -22,13 +22,13 @@ public class PlayerController : MonoBehaviour
     public int maxWeapon = 3;
 
     [HideInInspector]
-    public List<Weapon> fullyLevelledWeapons = new List<Weapon>();
+    public List<Weapon> fullyLevelledWeapons = new List<Weapon>( );
 
     void Start()
     {
-        if (assignedWeapons.Count == 0)
+        if ( assignedWeapons.Count == 0 )
         {
-            AddWeapon(Random.Range(0, unassignedWeapons.Count));
+            AddWeapon(Random.Range( 0, unassignedWeapons.Count ) );
         }
     }
 
@@ -36,28 +36,28 @@ public class PlayerController : MonoBehaviour
     {
         //プレイヤーの操作
         Vector3 moveInput = new Vector3(0f, 0f, 0f);
-        moveInput.x = Input.GetAxisRaw("Horizontal");
-        moveInput.y = Input.GetAxisRaw("Vertical");
+        moveInput.x = Input.GetAxisRaw( "Horizontal" );
+        moveInput.y = Input.GetAxisRaw( "Vertical" );
         moveInput.Normalize();
 
         //プレイヤーの速度
         transform.position += moveInput * moveSpeed * Time.deltaTime;
         //プレイヤーアニメーション
-        if ( Input.GetAxisRaw("Horizontal") < 0 || Input.GetAxisRaw("Vertical") > 0 )
+        if ( Input.GetAxisRaw( "Horizontal" ) < 0 || Input.GetAxisRaw( "Vertical" ) > 0 )
         {
-            playerAnim.SetBool("isMovingLeft", true);
+            playerAnim.SetBool( "isMovingLeft", true );
         }
         else
         {
-            playerAnim.SetBool("isMovingLeft", false);
+            playerAnim.SetBool( "isMovingLeft", false );
         }
-        if ( Input.GetAxisRaw("Vertical") < 0 || Input.GetAxisRaw("Horizontal") > 0 )
+        if ( Input.GetAxisRaw( "Vertical" ) < 0 || Input.GetAxisRaw( "Horizontal" ) > 0 )
         {
-            playerAnim.SetBool("isMovingRight", true);
+            playerAnim.SetBool( "isMovingRight", true );
         }
         else
         {
-            playerAnim.SetBool("isMovingRight", false);
+            playerAnim.SetBool( "isMovingRight", false );
         }
     }
 
