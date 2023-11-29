@@ -52,6 +52,6 @@ public class SpearWeapon : Weapon
 
         damager.transform.localScale = Vector3.one * stats[ weaponLevel ].range;
 
-        //attackCounter = 0f;
+        attackCounter = 0f;
     }
 }
