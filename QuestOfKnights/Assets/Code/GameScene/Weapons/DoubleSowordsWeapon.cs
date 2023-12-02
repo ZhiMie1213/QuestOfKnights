@@ -56,5 +56,7 @@ public class DoubleSwordsWeapon : Weapon
         timeBetweenSpawn = stats[ weaponLevel ].timeBetweenAttacks;
         //持たせる時間
         damager.lifeTime = stats[ weaponLevel ].duration;
+
+        spawnCounter = 0f;
     }
 }

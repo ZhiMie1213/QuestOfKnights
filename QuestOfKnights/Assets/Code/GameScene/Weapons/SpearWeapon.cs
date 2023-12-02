@@ -7,21 +7,22 @@ public class SpearWeapon : Weapon
     public EnemyDamager damager;
 
     private float attackCounter;
+    private Vector3 targetSize;
+    public float growSpeed = 5f;
     
     void Start( )
     {
         SetStats( );
+        
+        targetSize = transform.localScale;
+        transform.localScale = Vector3.zero;
     }
 
     void Update( )
     {
-        if ( statsUpdated == true )
-        {
-            statsUpdated = false;
-
-            SetStats( );
-        }
-
+        transform.localScale = Vector3.MoveTowards( transform.localScale, targetSize,
+            growSpeed * Time.deltaTime );
+        
         attackCounter -= Time.deltaTime;
         if ( attackCounter <= 0 )
         {
@@ -41,6 +42,13 @@ public class SpearWeapon : Weapon
             
             Instantiate( damager, damager.transform.position, damager.transform.rotation, transform )
                 .gameObject.SetActive( true );
+        }
+        
+        if ( statsUpdated == true )
+        {
+            statsUpdated = false;
+
+            SetStats( );
         }
     }
 

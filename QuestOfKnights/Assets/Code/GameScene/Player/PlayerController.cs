@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
     public float pickUpRange = 1.5f;
 
     public Weapon activeWeapon;
-    public Animator playerAnim;
 
     public List<Weapon> unassignedWeapons, assignedWeapons;
 
@@ -23,7 +22,9 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector]
     public List<Weapon> fullyLevelledWeapons = new List<Weapon>( );
-
+    [HideInInspector]
+    public Vector3 moveInput;
+    
     void Start()
     {
         if ( assignedWeapons.Count == 0 )
@@ -35,30 +36,13 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //プレイヤーの操作
-        Vector3 moveInput = new Vector3(0f, 0f, 0f);
+        moveInput = new Vector3(0f, 0f, 0f );
         moveInput.x = Input.GetAxisRaw( "Horizontal" );
         moveInput.y = Input.GetAxisRaw( "Vertical" );
-        moveInput.Normalize();
-
+        moveInput.Normalize( );
+        
         //プレイヤーの速度
         transform.position += moveInput * moveSpeed * Time.deltaTime;
-        //プレイヤーアニメーション
-        if ( Input.GetAxisRaw( "Horizontal" ) < 0 || Input.GetAxisRaw( "Vertical" ) > 0 )
-        {
-            playerAnim.SetBool( "isMovingLeft", true );
-        }
-        else
-        {
-            playerAnim.SetBool( "isMovingLeft", false );
-        }
-        if ( Input.GetAxisRaw( "Vertical" ) < 0 || Input.GetAxisRaw( "Horizontal" ) > 0 )
-        {
-            playerAnim.SetBool( "isMovingRight", true );
-        }
-        else
-        {
-            playerAnim.SetBool( "isMovingRight", false );
-        }
     }
 
     public void AddWeapon ( int weaponNumber )
