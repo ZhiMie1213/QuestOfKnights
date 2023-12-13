@@ -8,20 +8,20 @@ public class PlayerAnimator : MonoBehaviour
     PlayerController pc;
     SpriteRenderer sr;
     
-    void Start()
+    void Start( )
     {
         am = GetComponent<Animator>( );
         pc = GetComponent<PlayerController>( );
         sr = GetComponent<SpriteRenderer>( );
     }
 
-    void Update()
+    void Update( )
     {
         //プレイヤーアニメーション
         if ( pc.moveInput.x != 0 || pc.moveInput.y != 0 )
         {
             am.SetBool( "Move", true );
-            //SpriteDirectionChecker( );
+            SpriteDirectionChecker( );
         }
         else
         {

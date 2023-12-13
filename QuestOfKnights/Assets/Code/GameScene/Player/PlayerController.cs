@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //プレイヤーの操作
-        moveInput = new Vector3(0f, 0f, 0f );
+        moveInput = new Vector3( 0f, 0f, 0f );
         moveInput.x = Input.GetAxisRaw( "Horizontal" );
         moveInput.y = Input.GetAxisRaw( "Vertical" );
         moveInput.Normalize( );
