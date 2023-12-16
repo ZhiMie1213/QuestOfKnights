@@ -1,43 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAnimator : MonoBehaviour
+namespace Code.GameScene.Animation
 {
-    Animator am;
-    PlayerController pc;
-    SpriteRenderer sr;
-    
-    void Start( )
+    public class PlayerAnimator : MonoBehaviour
     {
-        am = GetComponent<Animator>( );
-        pc = GetComponent<PlayerController>( );
-        sr = GetComponent<SpriteRenderer>( );
-    }
+        Animator am;
+        PlayerController pc;
+        SpriteRenderer sr;
+        private static readonly int Move = Animator.StringToHash("Move");
 
-    void Update( )
-    {
-        //プレイヤーアニメーション
-        if ( pc.moveInput.x != 0 || pc.moveInput.y != 0 )
+        void Start( )
         {
-            am.SetBool( "Move", true );
-            SpriteDirectionChecker( );
+            am = GetComponent<Animator>( );
+            pc = GetComponent<PlayerController>( );
+            sr = GetComponent<SpriteRenderer>( );
         }
-        else
-        {
-            am.SetBool( "Move", false );
-        }
-    }
 
-    void SpriteDirectionChecker ( )
-    {
-        if ( pc.moveInput.x < 0 )
+        void Update( )
         {
-            sr.flipX = false;
+            //プレイヤーアニメーション
+            if ( pc.moveInput.x != 0 || pc.moveInput.y != 0 )
+            {
+                am.SetBool( "Move", true );
+                SpriteDirectionChecker( );
+            }
+            else
+            {
+                am.SetBool( "Move", false );
+            }
         }
-        else
+
+        void SpriteDirectionChecker ( )
         {
-            sr.flipX = true;
+            if ( pc.lastHorizontalVector > 0 )
+            {
+                sr.flipX = true;
+            }
+            else
+            {
+                sr.flipX = false;
+            }
         }
     }
 }

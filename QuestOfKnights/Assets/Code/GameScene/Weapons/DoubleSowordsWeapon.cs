@@ -31,8 +31,12 @@ public class DoubleSwordsWeapon : Weapon
         {
             spawnCounter = timeBetweenSpawn;
 
-            Instantiate( daggerToSpawn, daggerToSpawn.position, daggerToSpawn.rotation, holder )
-                .gameObject.SetActive( true );
+
+            for ( int i = 0; i < 2; i++ )
+            {
+                Instantiate( daggerToSpawn, daggerToSpawn.position, daggerToSpawn.rotation, holder )
+                    .gameObject.SetActive( true );
+            }
 
             SFXManager.instance.PlaySFX( 4 );
         }

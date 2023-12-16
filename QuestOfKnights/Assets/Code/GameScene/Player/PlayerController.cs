@@ -24,6 +24,10 @@ public class PlayerController : MonoBehaviour
     public List<Weapon> fullyLevelledWeapons = new List<Weapon>( );
     [HideInInspector]
     public Vector3 moveInput;
+    [HideInInspector]
+    public float lastHorizontalVector;
+    [HideInInspector] 
+    public float lastVerticalVector;
     
     void Start()
     {
@@ -43,6 +47,15 @@ public class PlayerController : MonoBehaviour
         
         //プレイヤーの速度
         transform.position += moveInput * moveSpeed * Time.deltaTime;
+
+        if ( moveInput.x != 0 )
+        {
+            lastHorizontalVector = moveInput.x;
+        }
+        if ( moveInput.y != 0 )
+        {
+            lastVerticalVector = moveInput.y;
+        }
     }
 
     public void AddWeapon ( int weaponNumber )

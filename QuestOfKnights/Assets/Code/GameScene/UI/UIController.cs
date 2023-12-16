@@ -46,7 +46,7 @@ public class UIController : MonoBehaviour
         explvlSlider.maxValue = levelExp;
         explvlSlider.value = currentExp;
 
-        expLvlText.text = "Lv: " + currentLvl;
+        expLvlText.text = "Lv" + currentLvl;
     }
 
     public void UpdateTimer( float time )

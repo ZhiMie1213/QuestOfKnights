@@ -84,9 +84,9 @@ public class EnemyDamager : MonoBehaviour
 	{
         if ( damageOverTime == false )
         {
-            if (collision.tag == "Enemy")
+            if ( collision.tag == "Enemy" )
             {
-                collision.GetComponent<EnemyController>().TakeDamage(damageAmount, shouldKnocBack);
+                collision.GetComponent<EnemyController>( ).TakeDamage( damageAmount, shouldKnocBack );
 
                 if ( destoryOnImpact )
                 {
