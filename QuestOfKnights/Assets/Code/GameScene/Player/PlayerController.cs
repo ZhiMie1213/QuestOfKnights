@@ -26,9 +26,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 moveInput;
     [HideInInspector]
     public float lastHorizontalVector;
-    [HideInInspector] 
-    public float lastVerticalVector;
-    
+
     void Start()
     {
         if ( assignedWeapons.Count == 0 )
@@ -51,10 +49,6 @@ public class PlayerController : MonoBehaviour
         if ( moveInput.x != 0 )
         {
             lastHorizontalVector = moveInput.x;
-        }
-        if ( moveInput.y != 0 )
-        {
-            lastVerticalVector = moveInput.y;
         }
     }
 

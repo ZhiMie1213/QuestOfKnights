@@ -21,22 +21,18 @@ public class DoubleSwordsWeapon : Weapon
 
     void Update( )
     {
-        //設定した値で武器をプレイヤーの周りに回す（武器の回転速度）
+        //武器をプレイヤーの周りに回す（武器の回転速度）
         holder.rotation = Quaternion.Euler( 0f, 0f, 
             holder.rotation.eulerAngles.z - ( rotateSpeed * Time.deltaTime * stats[ weaponLevel ].speed ) );
 
         spawnCounter -= Time.deltaTime;
-        //設定した再生の時間になったら新しいの武器が生成する
+        //時間になったら新しいの武器が生成する
         if ( spawnCounter <= 0f )
         {
             spawnCounter = timeBetweenSpawn;
-
-
-            for ( int i = 0; i < 2; i++ )
-            {
-                Instantiate( daggerToSpawn, daggerToSpawn.position, daggerToSpawn.rotation, holder )
-                    .gameObject.SetActive( true );
-            }
+            
+            Instantiate(daggerToSpawn, daggerToSpawn.position, daggerToSpawn.rotation, holder)
+                .gameObject.SetActive( true );
 
             SFXManager.instance.PlaySFX( 4 );
         }

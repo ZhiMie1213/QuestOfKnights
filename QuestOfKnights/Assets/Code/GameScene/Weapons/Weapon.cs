@@ -10,8 +10,6 @@ public class Weapon : MonoBehaviour
     public int weaponIcon;
 
     [HideInInspector] public bool statsUpdated;
-    //public Sprite icon;
-    protected Vector2 forward;
 
     public void LevelUp( )
     {
