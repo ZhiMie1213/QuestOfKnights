@@ -29,7 +29,6 @@ public class SwordWeapons : Weapon
         //設定した再生の時間になったら新しいの武器が生成する
         if ( spawnCounter <= 0f )
         {
-
             spawnCounter = timeBetweenSpawn;
             //向かっている方向によって斬撃の方向を変える
             //X座標

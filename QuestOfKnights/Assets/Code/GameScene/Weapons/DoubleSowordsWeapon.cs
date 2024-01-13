@@ -13,7 +13,7 @@ public class DoubleSwordsWeapon : Weapon
     private float spawnCounter;
     
     public EnemyDamager damager;
-
+    
     void Start( )
     {
         SetStats( );
@@ -31,7 +31,7 @@ public class DoubleSwordsWeapon : Weapon
         {
             spawnCounter = timeBetweenSpawn;
             
-            Instantiate(daggerToSpawn, daggerToSpawn.position, daggerToSpawn.rotation, holder)
+            Instantiate( daggerToSpawn, daggerToSpawn.position, daggerToSpawn.rotation, holder )
                 .gameObject.SetActive( true );
 
             SFXManager.instance.PlaySFX( 4 );
