@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,12 @@ using UnityEngine;
 public class SwitchWeapons : MonoBehaviour
 {
     private PlayerController weaponList;
+    private int nIndex = 0;
+
+    private void Awake( )
+    {
+        weaponList = Resources.Load<PlayerController>(typeof(PlayerController).Name);
+    }
 
     private void Update( )
     {
@@ -16,6 +23,11 @@ public class SwitchWeapons : MonoBehaviour
 
     private void NextWeapon( )
     {
-        //weaponList.assignedWeapons.Count++;
+        nIndex++;
+        
+        if ( nIndex == weaponList.assignedWeapons.Count )
+        {
+            
+        }
     }
 }
