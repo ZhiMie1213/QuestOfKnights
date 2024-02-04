@@ -19,6 +19,13 @@ public class PlayerHealthController : MonoBehaviour
     public GameObject deathEffect;
 
     public EnemyController enemyController;
+    
+    [SerializeField]
+    private float damageTime;
+    [SerializeField]
+    private float fiashTime;
+
+    private SpriteRenderer spriteRenderer;
 
     void Start( )
     {
@@ -26,26 +33,14 @@ public class PlayerHealthController : MonoBehaviour
 
         healthSlider.maxValue = maxHealth;
         healthSlider.value = currentHealth;
+        
+        spriteRenderer = GetComponent<SpriteRenderer>( );
     }
 
     void Update( )
     {
         
     }
-
-    //プレイヤーにダメージを与える
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Player" && enemyController.hitCounter <= 0f)
-    //    {
-    //        PlayerHealthController.instance.TakeDamage(enemyController.damage);
-
-    //        enemyController.hitCounter = enemyController.hitWaitTime;
-
-    //        //gameObject.layer = LayerMask.NameToLayer("PlayerDamage");
-    //        //StartCoroutine(Damage());
-    //    }
-    //}
 
     public void TakeDamage( float damageToTake )
     {
@@ -62,7 +57,24 @@ public class PlayerHealthController : MonoBehaviour
             
             SFXManager.instance.PlaySFX( 3 );
         }
-
         healthSlider.value = currentHealth;
+        
+        gameObject.layer = LayerMask.NameToLayer( "PlayerDamage" );
+        StartCoroutine( Damage( ) );
+    }
+    
+    IEnumerator Damage( )
+    {
+        Color color = spriteRenderer.color;
+        for ( int i = 0; i < damageTime; i++ )
+        {
+            yield return new WaitForSeconds( fiashTime );
+            spriteRenderer.color = new Color( color.r, color.g, color.b, 0.0f );
+
+            yield return new WaitForSeconds( fiashTime );
+            spriteRenderer.color = new Color( color.r, color.g, color.b, 1.0f );
+        }
+        spriteRenderer.color = color;
+        gameObject.layer = LayerMask.NameToLayer( "Default" );
     }
 }

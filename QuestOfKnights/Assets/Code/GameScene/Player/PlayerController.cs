@@ -14,11 +14,11 @@ public class PlayerController : MonoBehaviour
 
     public float pickUpRange = 1.5f;
 
-    public Weapon activeWeapon;
-
     public List<Weapon> unassignedWeapons, assignedWeapons;
 
-    public int maxWeapon = 3;
+    private SpriteRenderer playerSpriteRenderer;
+
+    public int maxWeapon = 5;
 
     [HideInInspector]
     public List<Weapon> fullyLevelledWeapons = new List<Weapon>( );
@@ -27,15 +27,15 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public float lastHorizontalVector;
 
-    void Start()
+    void Start( )
     {
         if ( assignedWeapons.Count == 0 )
         {
-            AddWeapon(Random.Range( 0, unassignedWeapons.Count ) );
+            AddWeapon( Random.Range( 0, unassignedWeapons.Count ) );
         }
     }
 
-    void Update()
+    void Update( )
     {
         //プレイヤーの操作
         moveInput = new Vector3( 0f, 0f, 0f );

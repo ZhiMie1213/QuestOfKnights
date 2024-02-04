@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class EnemyController : MonoBehaviour
 {
@@ -14,7 +15,6 @@ public class EnemyController : MonoBehaviour
     public Rigidbody2D theRB;
     public float moveSpeed;
     private Transform target;
-    private SpriteRenderer spriteRenderer;
 
     public float hitWaitTime = 1f;
     public float hitCounter;
@@ -26,12 +26,13 @@ public class EnemyController : MonoBehaviour
     public float knockBackTime = .5f;
     private float knockBackCounter;
 
+    public Collision2D enmeyCollision;
+
     public int expToGive = 1;
 
     void Start( )
     {
         target = PlayerHealthController.instance.transform;
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update( )
@@ -68,37 +69,18 @@ public class EnemyController : MonoBehaviour
     }
 
     //プレイヤーにダメージを与える
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D( Collision2D collision )
     {
-        if (collision.gameObject.tag == "Player" && hitCounter <= 0f)
+        if ( collision.gameObject.tag == "Player" && hitCounter <= 0f )
         {
-            PlayerHealthController.instance.TakeDamage(damage);
+            PlayerHealthController.instance.TakeDamage( damage );
 
             hitCounter = hitWaitTime;
-
-            //gameObject.layer = LayerMask.NameToLayer("PlayerDamage");
-            //StartCoroutine(Damage());
         }
     }
 
-    //IEnumerator Damage()
-    //{
-    //    Color color = spriteRenderer.color;
-    //    for (int i = 0; i < damageTime; i++)
-    //    {
-    //        yield return new WaitForSeconds(flashTime);
-    //        spriteRenderer.color = new Color(color.r, color.g, color.b, 0.0f);
-
-    //        yield return new WaitForSeconds(flashTime);
-    //        spriteRenderer.color = new Color(color.r, color.g, color.b, 1.0f);
-    //    }
-
-    //    spriteRenderer.color = color;
-    //    gameObject.layer = LayerMask.NameToLayer("Default");
-    //}
-
     //敵のHPが０になったら消えて、現在の位置に経験玉を生成する
-    public void TakeDamage( float damageToTake)
+    public void TakeDamage( float damageToTake )
     {
         health -= damageToTake;
         if ( health <= 0 )

@@ -42,6 +42,8 @@ public class SpearWeapon : Weapon
             
             Instantiate( damager, damager.transform.position, damager.transform.rotation, transform )
                 .gameObject.SetActive( true );
+            
+            SFXManager.instance.PlayerSFXPitched( 4 );
         }
         
         if ( statsUpdated == true )

@@ -46,6 +46,8 @@ public class DaggerWeapon : Weapon
 
                     Instantiate( projectile, projectile.transform.position, projectile.transform.rotation )
                         .gameObject.SetActive( true );
+                    
+                    SFXManager.instance.PlayerSFXPitched( 7 );
                 }
             }
         }

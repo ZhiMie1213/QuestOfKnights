@@ -15,8 +15,6 @@ public class EnemyDamager : MonoBehaviour
 
     public bool shouldKnocBack;
 
-    public bool destroyParint;
-
     public bool damageOverTime;
     public float timeBetweenDamage;
     private float damageCounter;
@@ -24,6 +22,13 @@ public class EnemyDamager : MonoBehaviour
     private List<EnemyController> enemiesInRange = new List<EnemyController>( );
 
     public bool destoryOnImpact;
+    
+    [SerializeField]
+    private float damageTime;
+    [SerializeField]
+    private float fiashTime;
+
+    private SpriteRenderer spriteRenderer;
 
     void Start( )
     {
@@ -41,20 +46,20 @@ public class EnemyDamager : MonoBehaviour
 
         //lifeTime -= Time.deltaTime;
         //武器の出現時間が終わったら消える
-        //if (lifeTime <= 0)
-        //{
-        //    targeSize = Vector3.zero;
+        /*if (lifeTime <= 0)
+        {
+            targeSize = Vector3.zero;
 
-        //    if (transform.localScale.x == 0f)
-        //    {
-        //        Destroy(gameObject);
+            if (transform.localScale.x == 0f)
+            {
+                Destroy(gameObject);
 
-        //        if (destroyParint)
-        //        {
-        //            Destroy(transform.parent.gameObject);
-        //        }
-        //    }
-        //}
+                if (destroyParint)
+                {
+                    Destroy(transform.parent.gameObject);
+                }
+            }
+        }*/
 
         if ( damageOverTime == true )
         {
@@ -110,7 +115,23 @@ public class EnemyDamager : MonoBehaviour
             if ( collision.tag == "Enemy" )
             {
                 enemiesInRange.Remove( collision.GetComponent<EnemyController>( ) );
+                StartCoroutine( Damage( ) );
+
             }
         }
+    }
+    
+    IEnumerator Damage( )
+    {
+        Color color = spriteRenderer.color;
+        for ( int i = 0; i < damageTime; i++ )
+        {
+            yield return new WaitForSeconds( fiashTime );
+            spriteRenderer.color = new Color( color.r, color.g, color.b, 0.0f );
+
+            yield return new WaitForSeconds( fiashTime );
+            spriteRenderer.color = new Color( color.r, color.g, color.b, 1.0f );
+        }
+        spriteRenderer.color = color;
     }
 }

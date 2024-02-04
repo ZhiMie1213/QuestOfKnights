@@ -29,6 +29,8 @@ public class HammerWeapon : Weapon
 
             Instantiate( damager, damager.transform.position, Quaternion.identity, transform )
                 .gameObject.SetActive( true );
+            
+            SFXManager.instance.PlayerSFXPitched( 6 );
         }
     }
 

@@ -201,7 +201,7 @@ MonoBehaviour:
   hitWaitTime: 1
   hitCounter: 0
   damage: 1
-  health: 5
+  health: 10
   knockBackTime: 0.5
   expToGive: 1
 --- !u!114 &2053203327542603479

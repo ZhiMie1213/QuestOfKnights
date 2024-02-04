@@ -59,7 +59,7 @@ public class SwordWeapons : Weapon
             Instantiate( daggerToSpawn, daggerToSpawn.position, daggerToSpawn.rotation, holder )
                 .gameObject.SetActive( true );
 
-            SFXManager.instance.PlaySFX( 4 );
+            SFXManager.instance.PlayerSFXPitched( 4 );
         }
 
         if ( statsUpdated == true )
