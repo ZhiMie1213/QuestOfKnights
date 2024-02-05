@@ -91,10 +91,10 @@ public class EnemyController : MonoBehaviour
             
             SFXManager.instance.PlayerSFXPitched( 0 );
         }
-        /*else
+        else
         {
             SFXManager.instance.PlayerSFXPitched( 1 );
-        }*/
+        }
         
         DamageNumberController.instance.SpawnDamage( damageToTake, transform.position );
     }
