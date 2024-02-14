@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2950457610142779093}
   - component: {fileID: 3913077129070562933}
   - component: {fileID: 1851970494125373079}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Goblin_Level4
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,7 +146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7573538827782693514}
   - component: {fileID: 6181454599182335959}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u30B3\u3099\u30D5\u3099\u30EA\u30F3"
   m_TagString: Enemy
   m_Icon: {fileID: 0}
